@@ -28,6 +28,8 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->version   = 2023091300;        // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2022111800;        // Requires this Moodle version.
 $plugin->component = 'gradeexport_xlsskema'; // Full name of the plugin (used for diagnostics)
+$plugin->maturity  = MATURITY_BETA;
+$plugin->release  = '4.1.0 (Build 2023091300)';
 
 // Non moodle attributes.
 $plugin->privacy = 'public'; 
