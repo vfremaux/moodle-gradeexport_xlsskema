@@ -23,15 +23,15 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['eventgradeexported'] = 'XLS grade exported';
-$string['pluginname'] = 'Excel spreadsheet for Skema';
-$string['privacy:metadata'] = 'The Skema spreadsheet grade export plugin does not store any personal data.';
+$string['eventgradeexported'] = 'Note exportée en XLS ';
+$string['pluginname'] = 'Feuille Excel  pour Skema';
+$string['privacy:metadata'] = 'Le plugin d\'export Excel de notes pour Skemaa ne stoke pas de données personelles.';
 
-$string['timeexported'] = 'Last downloaded from this course';
-$string['courseshort'] = 'Course shortname';
-$string['courseidnum'] = 'Course idnumber';
-$string['groupname'] = 'Group name';
-$string['groupidnum'] = 'Group idnumber';
+$string['timeexported'] = 'Dernier export pour ce cours';
+$string['courseshort'] = 'Nom court du cours';
+$string['courseidnum'] = 'Numéro d\'identification du cours';
+$string['groupname'] = 'Nom du groupe';
+$string['groupidnum'] = 'Numéro d\'identification du groupe';
 
-$string['xlsskema:publish'] = 'Publish XLS grade export';
-$string['xlsskema:view'] = 'Use Excel grade export';
+$string['xlsskema:publish'] = 'Exporter les notes en XLS  au format Skema';
+$string['xlsskema:view'] = 'Utilise l\'export Excel des notes pour Skema';

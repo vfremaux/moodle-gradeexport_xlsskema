@@ -79,6 +79,11 @@ class grade_export_xlsskema extends grade_export {
         // Last downloaded column header.
         $myxls->write_string(0, $pos++, get_string('timeexported', 'gradeexport_xlsskema'));
 
+        $myxls->write_string(0, $pos++, get_string('courseidnum', 'gradeexport_xlsskema'));
+        $myxls->write_string(0, $pos++, get_string('courseshort', 'gradeexport_xlsskema'));
+        $myxls->write_string(0, $pos++, get_string('groupidnum', 'gradeexport_xlsskema'));
+        $myxls->write_string(0, $pos++, get_string('groupname', 'gradeexport_xlsskema'));
+
         // Print all the lines of data.
         $i = 0;
         $geub = new grade_export_update_buffer();
@@ -118,6 +123,20 @@ class grade_export_xlsskema extends grade_export {
             }
             // Time exported.
             $myxls->write_string($i, $j++, time());
+
+            // Resolve groupname
+
+            $myxls->write_string($i, $j++, $this->course->idnumber);
+            $myxls->write_string($i, $j++, $this->course->shortname);
+
+            // Search the graded group of the student.
+            $studentgroups = $DB->get_records('groups_members', ['userid' => $user->id]);
+            if (!empty($studentgroups)) {
+                $group = array_shift($studentgroups);
+
+                $myxls->write_string($i, $j++, $group->idnumber);
+                $myxls->write_string($i, $j++, $group->name);
+            }
         }
         $gui->close();
         $geub->close();
