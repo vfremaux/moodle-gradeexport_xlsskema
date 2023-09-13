@@ -38,7 +38,8 @@ class grade_export_xlsskema extends grade_export {
      * To be implemented by child classes
      */
     public function print_grades() {
-        global $CFG;
+        global $CFG, $DB;
+
         require_once($CFG->dirroot.'/lib/excellib.class.php');
 
         $export_tracking = $this->track_exports();
