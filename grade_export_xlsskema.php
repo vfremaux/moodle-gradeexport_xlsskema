@@ -133,7 +133,8 @@ class grade_export_xlsskema extends grade_export {
             // Search the graded group of the student.
             $studentgroups = $DB->get_records('groups_members', ['userid' => $user->id]);
             if (!empty($studentgroups)) {
-                $group = array_shift($studentgroups);
+                $groupmb = array_shift($studentgroups);
+                $group = $DB->get_record('groups', ['id' => $groupmb->groupid]);
 
                 $myxls->write_string($i, $j++, $group->idnumber);
                 $myxls->write_string($i, $j++, $group->name);
