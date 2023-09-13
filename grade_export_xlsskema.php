@@ -136,8 +136,12 @@ class grade_export_xlsskema extends grade_export {
                 $groupmb = array_shift($studentgroups);
                 $group = $DB->get_record('groups', ['id' => $groupmb->groupid]);
 
-                $myxls->write_string($i, $j++, $group->idnumber);
-                $myxls->write_string($i, $j++, $group->name);
+                if (preg_match('/(\\d{4})_/', $group->idnumber, $matches)) {
+                    $groupid = $matches[1];
+
+                    $myxls->write_string($i, $j++, $groupid);
+                    $myxls->write_string($i, $j++, $group->name);
+                }
             }
         }
         $gui->close();
